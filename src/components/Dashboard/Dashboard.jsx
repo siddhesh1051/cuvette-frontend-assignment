@@ -3,8 +3,9 @@ import './Dashboard.css'
 import HTML from '../../assets/img/html.svg'
 import Syllabus from './Syllabus'
 import { PieChart, Pie, Cell, ReferenceLine } from 'recharts';
-
 import { LineChart, Line, XAxis, Tooltip } from 'recharts';
+
+
 const graphData = [
   {
     name: '0%',

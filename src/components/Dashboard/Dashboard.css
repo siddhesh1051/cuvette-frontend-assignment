@@ -76,6 +76,13 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.28px;
 }
 
 .html__innerDiv {
@@ -336,18 +343,17 @@
 }
 
 
-#analysis__statement{
+#analysis__statement {
     font-size: 14px;
     font-weight: 400;
     color: #566474;
     text-align: start;
 }
 
-.analysis__pie{
+.analysis__pie {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 285px;
     margin-top: 10px;
 }
-

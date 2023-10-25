@@ -35,8 +35,8 @@ function Modal({ setModalOpen, modalOpen }) {
                         <ModalField serial_no="3" Title="score" />
                     </div>
                     <div className="modal__footer">
-                        <button className="modal__btn__secondary">Cancel</button>
-                        <button className="modal__btn__primary">Save <span style={{display:'flex',justifyContent:'center',alignItems:'center'}}><img src={Arrow} alt="" /></span></button>
+                        <button className="modal__btn__secondary" onClick={()=> setModalOpen(false)}>Cancel</button>
+                        <button className="modal__btn__primary" onClick={()=> setModalOpen(false)}>Save <span style={{display:'flex',justifyContent:'center',alignItems:'center'}}><img src={Arrow} alt="" /></span></button>
 
                     </div>
                 </div>

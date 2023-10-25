@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Dashboard.css'
 import HTML from '../../assets/img/html.svg'
 import Syllabus from './Syllabus'
@@ -44,6 +44,19 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
     { name: 'Group B', value: 15 - correctAnswers },
   ])
 
+  useEffect(() => {
+    console.log('correctAnswers changed:', correctAnswers);
+    const newData = [
+      { name: 'Group A', value: correctAnswers },
+      { name: 'Group B', value: 15 - correctAnswers },
+    ];
+    console.log('Data before update:', data);
+    setData(newData);
+    console.log('Data after update:', newData);
+  }, [correctAnswers]);
+  
+  
+
 
 
   return (
@@ -71,7 +84,9 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
         </div>
 
         <div className='stat__container'>
+        <div className='skill__div'>
           <p className='stat__heading'>Quick Statistics</p>
+        </div>
           <div className='stat__grid'>
 
             <div className='stat__item'>
@@ -110,7 +125,7 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
           <p className='comp__heading'>Comparison Graph</p>
           <div className='comp__para__div'>
 
-            <p className='comp__para'><span style={{ fontWeight: 700 }}>You scored 37% percentile </span> which is lower than the average percentile 72% of all the engineers who took this assessment</p>
+            <p className='comp__para'><span style={{ fontWeight: 700 }}>You scored {percentile}% percentile </span> which is lower than the average percentile 72% of all the engineers who took this assessment</p>
             <div className='stat__icon'>
               <span className='emoji'>📈</span>
             </div>
@@ -139,7 +154,7 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
               {/* <Legend /> */}
               <Line type="monotone" dataKey="value" stroke="#438AF6" activeDot={{ r: 8 }} />
               <ReferenceLine x="40%" stroke="#C8D6E5" label="Percentile" strokeDasharray="5 5" />
-              <ReferenceLine x="80%" stroke="#FF914280" label="Percentile" strokeDasharray="5 5" />
+              <ReferenceLine x="80%" stroke="#FF914280" label="" strokeDasharray="5 5" />
             </LineChart>
             {/* </ResponsiveContainer> */}
           </div>
@@ -163,11 +178,11 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
           <div className='analysis__main'>
 
             <p className='analysis__heading'>Analysis</p>
-            <p className='analysis__score'>07 / 15</p>
+            <p className='analysis__score'>{correctAnswers} / 15</p>
           </div>
 
           <p className='analysis__para'>
-            You scored 7 question correct out of 15. <span id='analysis__statement'>However it
+            You scored {correctAnswers} question correct out of 15. <span id='analysis__statement'>However it
               still needs some improvements</span>
           </p>
 
@@ -184,8 +199,7 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
               </foreignObject>
               <Pie
                 data={data}
-                // cx={120}
-                // cy={200}
+                key={correctAnswers} 
                 innerRadius={60}
                 outerRadius={90}
                 fill="#8884d8"

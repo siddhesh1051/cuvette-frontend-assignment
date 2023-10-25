@@ -1,3 +1,26 @@
 .app{
     min-height: 100vh;
 }
+
+::-webkit-scrollbar {
+    border-radius: 20px;
+    width: 10px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f3f3f5; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #142683; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0f1f6c; 
+  }
+  

@@ -3,14 +3,14 @@ import Sidebar from '../Sidebar/Sidebar'
 import './Main.css'
 import Dashboard from '../Dashboard/Dashboard'
 
-const Main = () => {
+const Main = ({ setModalOpen, modalOpen }) => {
     return (
         <div className="grid-container">
             <div className="sidebar">
                 <Sidebar/>
             </div>
             <div className="main">
-                <Dashboard/>
+                <Dashboard setModalOpen={ setModalOpen } modalOpen={modalOpen}/>
             </div>
             
         </div>

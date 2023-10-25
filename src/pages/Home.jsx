@@ -3,11 +3,11 @@ import Navbar from '../components/Navbar/Navbar'
 import Main from '../components/Main/Main'
 import './Home.css'
 
-const Home = () => {
+const Home = ({ setModalOpen,modalOpen }) => {
   return (
     <div className='home__container'>
       <Navbar/>
-      <Main/>
+      <Main setModalOpen={ setModalOpen } modalOpen={modalOpen}/>
     </div>
   )
 }

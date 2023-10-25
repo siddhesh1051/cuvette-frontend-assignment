@@ -226,9 +226,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 500px;
-    background-color: #EBF0F5;
     margin-top: 10px;
 }
 
@@ -248,6 +246,7 @@
     background: #fff;
     border: 1px solid #EBF0F5;
 }
+
 .syllabus__heading {
     font-size: 16px;
     font-weight: 700;
@@ -282,3 +281,73 @@
     border-radius: 10px;
     width: 100%;
 }
+
+
+
+/* analysis styles */
+
+.analysis__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    padding: 14px 24px;
+    background: #fff;
+    border: 1px solid #EBF0F5;
+}
+
+.analysis__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+
+}
+
+
+.analysis__heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E272E;
+    text-align: start;
+}
+
+
+.analysis__score {
+    color: #438AF6;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+.analysis__para {
+    font-size: 14px;
+    font-weight: 700;
+    color: #566474;
+    text-align: start;
+}
+
+
+#analysis__statement{
+    font-size: 14px;
+    font-weight: 400;
+    color: #566474;
+    text-align: start;
+}
+
+.analysis__pie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 285px;
+    margin-top: 10px;
+}
+

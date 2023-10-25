@@ -137,7 +137,7 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
             {/* <ResponsiveContainer width="100%" height="100%"> */}
             <LineChart
               width={700}
-              height={500}
+              height={400}
               data={graphData}
               margin={{
                 top: 5,

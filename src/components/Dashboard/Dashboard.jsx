@@ -4,7 +4,7 @@ import HTML from '../../assets/img/html.svg'
 import Syllabus from './Syllabus'
 import { PieChart, Pie, Cell, ReferenceLine } from 'recharts';
 
-import { LineChart, Line, XAxis, Tooltip} from 'recharts';
+import { LineChart, Line, XAxis, Tooltip } from 'recharts';
 const graphData = [
   {
     name: '0%',
@@ -54,8 +54,8 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
     setData(newData);
     // console.log('Data after update:', newData);
   }, [correctAnswers]);
-  
-  
+
+
 
 
 
@@ -77,16 +77,16 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
             </div>
           </div>
           <button className='html__button openModalBtn'
-        onClick={() =>{ setModalOpen(true);console.log(modalOpen)}}>
+            onClick={() => { setModalOpen(true); console.log(modalOpen) }}>
             Update
           </button>
 
         </div>
 
         <div className='stat__container'>
-        <div className='skill__div'>
-          <p className='stat__heading'>Quick Statistics</p>
-        </div>
+          <div className='skill__div'>
+            <p className='stat__heading'>Quick Statistics</p>
+          </div>
           <div className='stat__grid'>
 
             <div className='stat__item'>
@@ -125,7 +125,11 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
           <p className='comp__heading'>Comparison Graph</p>
           <div className='comp__para__div'>
 
-            <p className='comp__para'><span style={{ fontWeight: 700 }}>You scored {percentile}% percentile </span> which is lower than the average percentile 72% of all the engineers who took this assessment</p>
+            <p className='comp__para'>
+              <span style={{ fontWeight: 700 }}>You scored {percentile}% percentile </span>
+              which is {percentile < 72 ? "lower" : "higher"} than the average percentile
+              72% of all the engineers who took this assessment
+            </p>
             <div className='stat__icon'>
               <span className='emoji'>📈</span>
             </div>
@@ -198,7 +202,7 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
               </foreignObject>
               <Pie
                 data={data}
-                key={correctAnswers} 
+                key={correctAnswers}
                 innerRadius={60}
                 outerRadius={90}
                 fill="#8884d8"

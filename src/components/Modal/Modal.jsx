@@ -24,7 +24,6 @@ function Modal({ setModalOpen, modalOpen }) {
     return (
         <div className="modalBackground">
             <div className="modalContainer">
-
                 <div className="modal__container">
                     <div className="modal__top">
                         <h1 className="modal__heading">Update Score</h1>

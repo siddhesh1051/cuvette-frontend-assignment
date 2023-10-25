@@ -50,9 +50,9 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
       { name: 'Group A', value: correctAnswers },
       { name: 'Group B', value: 15 - correctAnswers },
     ];
-    console.log('Data before update:', data);
+    // console.log('Data before update:', data);
     setData(newData);
-    console.log('Data after update:', newData);
+    // console.log('Data after update:', newData);
   }, [correctAnswers]);
   
   
@@ -77,7 +77,7 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
             </div>
           </div>
           <button className='html__button openModalBtn'
-        onClick={() =>{ setModalOpen(!modalOpen);console.log(modalOpen)}}>
+        onClick={() =>{ setModalOpen(true);console.log(modalOpen)}}>
             Update
           </button>
 
@@ -182,8 +182,7 @@ const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }
           </div>
 
           <p className='analysis__para'>
-            You scored {correctAnswers} question correct out of 15. <span id='analysis__statement'>However it
-              still needs some improvements</span>
+            You scored {correctAnswers} question correct out of 15. <span id='analysis__statement'>   {correctAnswers < 10 ? 'However, it still needs some improvements' : 'Good going, Keep up the good work'}</span>
           </p>
 
           <div className='analysis__pie'>

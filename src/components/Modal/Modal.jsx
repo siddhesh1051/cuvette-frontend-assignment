@@ -42,7 +42,7 @@ function Modal({ setModalOpen, modalOpen, rank, setRank, percentile, setPercenti
                                 <div className="modal__number">1</div>
                                 <p className="modal__field__title">Update your <span style={{ fontWeight: '700' }}>rank</span></p>
                             </div>
-                            <input className="modal__input" type="number" value={rank} onChange={(e) => setRank(parseInt(e.target.value))}
+                            <input className="modal__input" type="number" value={rank} min={1} max={10000} onChange={(e) => setRank(parseInt(e.target.value))}
                             />
                         </div>
 
@@ -53,7 +53,7 @@ function Modal({ setModalOpen, modalOpen, rank, setRank, percentile, setPercenti
                                 <div className="modal__number">2</div>
                                 <p className="modal__field__title">Update your <span style={{ fontWeight: '700' }}>percentile</span></p>
                             </div>
-                            <input className="modal__input" type="number" value={percentile} onChange={(e) => {
+                            <input className="modal__input" type="number" value={percentile} min={0} max={100} onChange={(e) => {
                                 const parsedValue = parseInt(e.target.value);
                                 setPercentile(parsedValue > 100 ? 100 : parsedValue);
                             }} />
@@ -66,7 +66,7 @@ function Modal({ setModalOpen, modalOpen, rank, setRank, percentile, setPercenti
                                 <div className="modal__number">3</div>
                                 <p className="modal__field__title">Update your <span style={{ fontWeight: '700' }}>current score (out of 15)</span></p>
                             </div>
-                            <input className="modal__input" type="number" value={correctAnswers} onChange={(e) => {
+                            <input className="modal__input" type="number" value={correctAnswers} min={0} max={15} onChange={(e) => {
                                 const parsedValue = parseInt(e.target.value);
                                 setCorrectAnswers(parsedValue > 15 ? 15 : parsedValue);
 

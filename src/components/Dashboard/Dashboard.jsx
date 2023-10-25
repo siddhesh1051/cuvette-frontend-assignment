@@ -4,7 +4,7 @@ import HTML from '../../assets/img/html.svg'
 import Syllabus from './Syllabus'
 import { PieChart, Pie, Cell, ReferenceLine } from 'recharts';
 
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip} from 'recharts';
 const graphData = [
   {
     name: '0%',
@@ -35,12 +35,15 @@ const graphData = [
 const COLORS = ['rgba(67, 138, 246, 1)', 'rgba(67, 138, 246, 0.1)'];
 
 
-const Dashboard = ({ setModalOpen, modalOpen }) => {
+const Dashboard = ({ setModalOpen, modalOpen, rank, percentile, correctAnswers }) => {
+
+
 
   const [data, setData] = useState([
-    { name: 'Group A', value: 70 },
-    { name: 'Group B', value: 30 },
+    { name: 'Group A', value: correctAnswers },
+    { name: 'Group B', value: 15 - correctAnswers },
   ])
+
 
 
   return (
@@ -61,9 +64,7 @@ const Dashboard = ({ setModalOpen, modalOpen }) => {
             </div>
           </div>
           <button className='html__button openModalBtn'
-        onClick={
-          () =>{ setModalOpen(!modalOpen);console.log(modalOpen)}
-        }>
+        onClick={() =>{ setModalOpen(!modalOpen);console.log(modalOpen)}}>
             Update
           </button>
 
@@ -78,7 +79,7 @@ const Dashboard = ({ setModalOpen, modalOpen }) => {
                 <span className='emoji'>🏆</span>
               </div>
               <div className='stat__box'>
-                <p className='stat__number'>12,890</p>
+                <p className='stat__number'>{rank}</p>
                 <p className='stat__type'>YOUR RANK</p>
               </div>
             </div>
@@ -87,7 +88,7 @@ const Dashboard = ({ setModalOpen, modalOpen }) => {
                 <span className='emoji'>📋</span>
               </div>
               <div className='stat__box'>
-                <p className='stat__number'>37%</p>
+                <p className='stat__number'>{percentile}%</p>
                 <p className='stat__type'>PERCENTILE</p>
               </div>
             </div>
@@ -96,7 +97,7 @@ const Dashboard = ({ setModalOpen, modalOpen }) => {
                 <span className='emoji'>✅</span>
               </div>
               <div className='stat__box'>
-                <p className='stat__number'>07 / 15</p>
+                <p className='stat__number'>{correctAnswers} / 15</p>
                 <p className='stat__type'>CORRECT ANSWERS</p>
               </div>
             </div>
